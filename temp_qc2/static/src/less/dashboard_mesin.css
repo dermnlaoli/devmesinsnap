@@ -1,0 +1,88 @@
+/* Kanban Box Styles */
+.o_kanban_primary {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.o_kanban_primary:hover {
+    background-color: #f5f5f5;
+}
+
+/* Field Styles */
+.o_kanban_primary .o_field_widget {
+    margin-bottom: 5px;
+}
+
+.o_kanban_primary .o_field_widget:first-child {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.o_kanban_primary .o_field_widget:nth-child(2) {
+    color: #666;
+}
+
+.o_kanban_primary .o_field_widget:nth-child(3) {
+    font-style: italic;
+}
+
+/* Status Styles */
+.o_kanban_primary .o_field_widget[name="status"] {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.o_kanban_primary .o_field_widget[name="status"][value="scheduled"] {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.o_kanban_primary .o_field_widget[name="status"][value="processing"] {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+.o_kanban_primary .o_field_widget[name="status"][value="completed"] {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+/* Tambahkan transisi untuk efek animasi */
+.mesin-kanban {
+    /* Properti lainnya */
+    opacity: 0; /* Awalnya tidak terlihat */
+    transition: opacity 0.5s ease-in-out; /* Efek animasi transisi */
+  }
+  
+  .mesin-kanban.active {
+    opacity: 1; /* Setelah tombol ditekan, tampilkan dengan animasi */
+  }
+  
+  /* Gaya tambahan untuk tombol */
+  .mesin-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .mesin-button:hover {
+    background-color: #45a049;
+  }
+  

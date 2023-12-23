@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="inspector_form" model="ir.ui.view">
+            <field name="name">inspector.form</field>
+            <field name="model">data.inspector</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <h1>
+                                <div class="nama-inspector">
+                                    <field name="nama" placeholder="Nama Inspector" />
+                                </div>
+                            </h1>
+                        </group>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="tanggal-inspector">
+                                    <field name="tanggal" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div style="position: absolute;top: 2px;left: 35px;background-color: white;padding: 0 5px;border-radius: 50px;">Shift dan Putaran</div>
+                                <div class="col-md-12" 
+                                        style="border: 1px solid #000;
+                                                border-radius: 25px;
+                                                margin: 2px;
+                                                border-color: cadetblue;
+                                                position: relative;
+                                                height: auto;
+                                                overflow: scroll;
+                                                overflow: auto;
+                                                display: flex;
+                                                align-items: center;
+                                                align-content: center;
+                                                margin-top: 20px;
+                                                justify-content: center;
+                                                flex-wrap: wrap;">
+                                    <div class="radio-inspector">
+                                        <field name="shift" widget="radio" options="{'horizontal': true}"/>
+                                        <field name="putaran" widget="radio" options="{'horizontal': true}"/>
+                                        <div class="radio-block">
+                                            <field name="block_id" widget="radio" options="{'horizontal': true}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        </div>
+                        <notebook>
+                            <page string="Hasil Snap">
+                                <field name="snap_qc_line" mode="tree">
+                                    <tree>
+                                        <field name="mesin"/>
+                                        <field name="putus_lusi"/>
+                                        <field name="putus_pakan"/>
+                                        <field name="bendera_merah"/>
+                                        <field name="ambrol"/>
+                                        <field name="dedel"/>
+                                        <field name="hb"/>
+                                        <field name="naik_beam"/>
+                                        <field name="oh"/>
+                                        <field name="preventif"/> 
+                                        <field name="keterangan"/>   
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>  
+                        <div class="row">
+                            <div class="col-md-12">
+                            <div style="position: absolute;top: 2px;left: 35px;background-color: white;padding: 0 5px;border-radius: 50px;">Jumlah / Kerusakan</div>
+                                <div class="col-md-12" style="border: 1px solid #000;height: 150px;border-radius: 25px;margin: 2px;border-color: cadetblue;position: relative;overflow: scroll;display: flex;align-items: flex-start;align-content: flex-start;flex-wrap: wrap;margin-top: 20px;overflow: auto;">
+                                    <div class="col-md-6">
+                                        <group>
+                                            <field name="hitung_putus_lusi" string="Putus Lusi"/>
+                                            <field name="hitung_putus_pakan" string="Putus Pakan"/>
+                                            <field name="hitung_bendera_merah" string="Bendera Merah"/>
+                                            <field name="hitung_ambrol" string="Ambrol"/>
+                                            <field name="hitung_dedel" string="Dedel"/>
+                                        </group>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <group>
+                                            <field name="hitung_hb" string="Habis Beam"/>
+                                            <field name="hitung_naik_beam" string="Naik Beam"/>
+                                            <field name="hitung_oh" string="Over Houle"/>
+                                            <field name="hitung_preventif" string="Preventif"/>
+                                        </group>
+                                    </div>
+                                </div>
+                        </div>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="snap_qc_line_form" model="ir.ui.view">
+            <field name="name">data_snap.qc.line.form</field>
+            <field name="model">data.snap.qc.line</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="radio-mesin" attrs="{'invisible': [('parent.block_id', '=', False)]}">
+                                    <field name="mesin" widget="radio" 
+                                            options="{'horizontal': true}" 
+                                            domain="[('block_id', '=', parent.block_id)]"/>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                            <div class="cek-box-rusak" attrs="{'invisible': [('mesin', '=', False)]}">
+                                <group name="cex-box" string="Jenis Kerusakan">
+                                    <div class="col-md-12" style="border: 1px solid #000;max-height: 220px;border-radius: 25px;margin: 2px;border-color: cadetblue;position: relative;display: flex;align-items: flex-start;flex-wrap: wrap;overflow: auto;">
+                                        <div class="col-md-6">
+                                            <group>    
+                                                <field name="putus_lusi" widget="boolean_toggle" />
+                                                <field name="putus_pakan" widget="boolean_toggle"/>
+                                                <field name="bendera_merah" widget="boolean_toggle"/>
+                                                <field name="ambrol" widget="boolean_toggle"/>
+                                                <field name="dedel" widget="boolean_toggle"/>
+                                            </group>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <group>   
+                                                <field name="hb" widget="boolean_toggle"/>
+                                                <field name="naik_beam" widget="boolean_toggle"/>
+                                                <field name="oh" widget="boolean_toggle"/>
+                                                <field name="preventif" widget="boolean_toggle"/>
+                                            </group>
+                                        </div>
+                                    </div>
+                                </group>
+                            </div>
+                            </div>
+                            <div class="col-md-12">
+                                <field name="keterangan" placeholder="Lain-Lain" attrs="{'invisible': [('mesin', '=', False)]}"/>
+                            </div>        
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="inspector_tree" model="ir.ui.view">
+            <field name="name">inspector.tree</field>
+            <field name="model">data.inspector</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nama"/>
+                    <field name="tanggal"/>
+                    <field name="shift"/>
+                    <field name="putaran"/>
+                </tree>
+            </field>
+        </record>    
+    </data>
+</odoo>

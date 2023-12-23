@@ -1,0 +1,320 @@
+/* Mesin Kanban CSS */
+.mesin-kanban {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.o_form_view .o_group .o_field_widget {
+    width: 100%;
+}
+
+.o_form_view .o_group {
+    display: inline-block;
+    width: 100%;
+}
+
+/* Radio Mesin */
+    .o_form_view .radio-mesin .o_field_widget {
+        margin: 5px -9px 0px 0px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        overflow: scroll;
+        height: 200px; 
+    }
+    .o_form_view .o_group .radio-memsin .o_field_widget {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .o_form_view .o_group.o_inner_group > tbody > tr > td.o_td_label .radio-mesin{
+        width: 0%;
+        padding: 0 15px 0 0;
+        min-width: 150px;
+        display:none
+    }
+
+    .radio-mesin .o_field_widget.o_field_radio.o_horizontal .o_radio_item {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        background: #0d49b6;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        font-size: 18px;
+        white-space: nowrap;
+        height: 25px;
+        width: 60px;
+        color: white;
+    }
+
+    .radio-mesin .custom-radio .custom-control-label::after {
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+        left: px;
+        top: calc(50% - 8px);
+        border: 2px solid #ffffff;
+        display: none
+        
+    }
+
+
+    .radio-mesin .custom-radio .custom-control-label::before {
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+        left: -17px;
+        top: calc(50% - 7px);
+        background: #4eb42a;
+        transform: scale(1);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+
+    .radio-mesin .o_radio_item [widget="radio"] {
+        display: none;
+    }
+
+    .radio-mesin [type="radio"]:checked ~ label {
+        border-color: #080652;
+    }
+
+    .radio-mesin [type="radio"]:checked ~ label::before {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+
+    .o_form_view .cek-box-rusak .o_horizontal_separator {
+        color: #7C7BAD;
+        font-weight: bold;
+        text-align: center;
+    }
+
+/* Inspector */
+
+    .nama-inspector .o_form_view .o_group.o_inner_group {
+        text-align: center;
+    }
+
+    .o_form_view .o_group .nama-inspector .o_field_widget {
+        width: 100%;
+        margin: 5px;
+        border-radius: 50px;
+        border: none;
+    }
+
+    .col-md-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 0px 11px 0px;
+    }
+
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        display: flex;
+        align-items: center;
+    }
+
+    /* .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 50%;
+    } */
+
+    .o_form_view .radio-inspector .o_field_widget {
+        margin: 5px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .tanggal-inspector {
+        text-align: center;
+        width: 94%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #d2d2ff;
+        border-radius: 50px;
+    }
+
+    .nama-inspector {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #d2d2ff;
+        border-radius: 50px;
+    }
+
+    .o_form_view .o_group .tanggal-inspector .o_field_widget {
+        width: 100%;
+        display: flex;
+        margin: 5px;
+    }
+
+    .o_form_view .o_group.o_inner_group > tbody > tr > td.o_td_label .radio-inspector{
+        width: 0%;
+        padding: 0 15px 0 0;
+        min-width: 250px;
+        display:none
+    }
+
+    .radio-inspector .o_field_widget.o_field_radio.o_horizontal .o_radio_item {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        background: #0d49b6;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        font-size: 18px;
+        white-space: nowrap;
+        height: 25px;
+        width: 90px;
+        color: white;
+        text-align: center;
+    }
+
+    .radio-inspector .custom-radio .custom-control-label::after {
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+        left: px;
+        top: calc(50% - 8px);
+        border: 2px solid #ffffff;
+        display: none
+        
+    }
+
+
+    .radio-inspector .custom-radio .custom-control-label::before {
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+        left: -17px;
+        top: calc(50% - 7px);
+        background: #4eb42a;
+        transform: scale(1);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+
+    .radio-inspector .o_radio_item [widget="radio"] {
+        display: none;
+    }
+
+    .radio-inspector [type="radio"]:checked ~ label {
+        border-color: #080652;
+    }
+
+    .radio-inspector [type="radio"]:checked ~ label::before {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+
+    .radio-block .o_field_widget.o_field_radio.o_horizontal .o_radio_item {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        background: #0d49b6;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        font-size: 18px;
+        white-space: nowrap;
+        height: 25px;
+        width: 50px;
+        color: white;
+        text-align: center;
+    }
+
+.mesin-body-tittle {
+    background-color: #ffffff;
+    color: black;
+    border-radius: 5px;
+    margin: 2px;
+    padding: 2px;
+    height: auto; /* Atur tinggi maksimal kartu */
+    overflow-y: auto; /* Tambahkan penggulungan vertikal jika konten melebihi tinggi maksimal */
+    width: auto;
+    flex-direction: column;
+    display: flex;
+}
+
+.mesin-body-content {
+    display: flex;
+    flex-direction: column;
+    max-height: 200px; /* Atur tinggi maksimal kartu */
+    overflow-y: auto; /* Tambahkan penggulungan vertikal jika konten melebihi tinggi maksimal */
+    width: auto;
+    margin: 2px;
+    padding: 2px;
+}
+
+.mesin-details {
+    margin-bottom: 5px;
+}
+
+/* Styling untuk tombol aksi */
+.btn-primary {
+    background-color: #6495ED;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 5px;
+    cursor: pointer;
+    width: auto;
+}
+
+.o_mesin_kanban .o_kanban_record {
+    width: 20%; /* 100% / 5 columns */
+}
+
+@media (max-width: 768px) {
+    /* Mengubah warna latar belakang elemen */
+    .element {
+        background-color: #f0f0f0;
+    }
+    /* Mengubah ukuran font */
+    .judul {
+        font-size: 16px;
+    }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* Set the width of each radio button */
+.radio-button {
+  width: 45%;
+}
+
+/* Set the margin between each radio button */
+.radio-button + .radio-button {
+  margin-left: 10px;
+}
+
+input[name='mesin'][readonly] {
+    color: #999; /* Ganti warna sesuai kebutuhan */
+}

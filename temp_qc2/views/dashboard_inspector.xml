@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_data_inspector_kanban" model="ir.ui.view">
+            <field name="name">data_inspector.kanban</field>
+            <field name="model">data.inspector</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey o_kanban_dashboard o_inspector_kanban" create="0">
+                    <field name="nama"/>
+                    <field name="tanggal"/>
+                    <field name="shift"/>
+                    <field name="putaran"/>
+                    <field name="hitung_mesin"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings mt4">
+                                        <strong class="mesin-kanban-title">
+                                            <span><t t-esc="record.nama.value"/></span>
+                                        </strong>
+                                    </div>
+                                    <strong><field name="shift" widget="badge"/></strong>
+                                </div>
+                                <div class="o_kanban_record_top mb16">
+                                    <div class="o_kanban_record_headings mt4">
+                                    </div>
+                                    <strong><field name="putaran" widget="badge"/></strong>
+                                </div>
+                                <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left text-muted">
+                                        <span> <t t-esc="record.tanggal.value"/></span>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        <field name="hitung_mesin" widget="badge" decoration-info="1"/>
+                                        <field name="persentase" widget="percentage" decoration-success="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="data_inspector_dashboard_action" model="ir.actions.act_window">
+            <field name="name">Dashboard Inspector</field>
+            <field name="res_model">data.inspector</field>
+            <field name="view_mode">kanban,form</field>
+        </record>
+
+        <record id="data_inspector_action" model="ir.actions.act_window">
+            <field name="name">Data Inspector</field>
+            <field name="res_model">data.inspector</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="data_mesin_action" model="ir.actions.act_window">
+            <field name="name">Data Mesin</field>
+            <field name="res_model">data.mesin.urw</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="tambahkan_block" model="ir.actions.act_window">
+            <field name="name">Daftar Block Mesin</field>
+            <field name="res_model">blok.mesin.urw</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu Item Dashboard -->
+        <menuitem id="snap_menu" name="Inspector" action="data_inspector_dashboard_action" groups="base.group_user"/>
+        
+        <menuitem id="tambah_id" name="Mulai Snap" parent="snap_menu" action="data_inspector_action"/>
+
+        <menuitem id="snap_mesin" name="Mesin Produksi" parent="snap_menu" action="data_mesin_action"/>
+            <menuitem id="daftar_mesin" name="Daftar Mesin" parent="snap_mesin" action="data_mesin_action"/>
+            <menuitem id="tambah_block_mesin" name="Daftar Block Mesin" parent="snap_mesin" action="tambahkan_block"/>     
+            
+    
+        <template id="assets_backend" name="inspector assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/temp_qc/static/src/css/dashboard_mesin.css"/>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>
