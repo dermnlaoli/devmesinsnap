@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <data>    
+    <record id="data_block_mesin_urw" model="ir.ui.view">
+            <field name="name">data_block_mesin_urw_form</field>
+            <field name="model">blok.mesin.urw</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <h1>
+                                <field name="block" />
+                            </h1>
+                        </group>
+                    </sheet> 
+                </form>
+            </field>
+        </record>
+
+        <record id="data_block_mesin_urw_tree" model="ir.ui.view">
+            <field name="name">data_block_mesin_urw_tree</field>
+            <field name="model">blok.mesin.urw</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="block"/>
+                </tree>
+            </field>
+        </record>    
+  </data>
+</odoo>

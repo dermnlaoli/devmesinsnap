@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_data_mesin_urw,data.mesin.urw,model_data_mesin_urw,base.group_user,1,1,1,1
+access_inspector,data.inspector,model_data_inspector,base.group_user,1,1,1,1
+access_snap,data.snap.qc.line,model_data_snap_qc_line,base.group_user,1,1,1,1
+access_blok_mesin_urw,blok.mesin.urw,model_blok_mesin_urw,base.group_user,1,1,1,1

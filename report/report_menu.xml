@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="action_report_qc_shuttle" model="ir.actions.report">
+            <field name="name">Report QC Shuttle</field>
+            <field name="model">data.inspector</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">temp_qc.report_qc_shuttle</field>
+            <field name="report_file">temp_qc.report.qc_shuttle_test</field>
+            <field name="print_report_name">'Report - %s' % object.nama</field>
+            <field name="binding_model_id" ref="model_data_inspector"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <!-- <record id="action_report_mesin_produksi" model="ir.actions.report">
+            <field name="name">Report Mesin Produksi</field>
+            <field name="model">data.mesin.produksi</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">qc_shuttle.report_mesin_produksi</field>
+            <field name="report_file">qc_shuttle.mesin_produksi_report</field>
+            <field name="print_report_name">'Mesin Produksi - %s' % object.name</field>
+            <field name="binding_model_id" ref="model_data_mesin_produksi"/>
+            <field name="binding_type">report</field>
+        </record> -->
+     </data> 
+</odoo>  
