@@ -88,6 +88,7 @@
                                             <field name="hitung_naik_beam" string="Naik Beam"/>
                                             <field name="hitung_oh" string="Over Houle"/>
                                             <field name="hitung_preventif" string="Preventif"/>
+                                            <field name="rata_rata_putus_pakan" string="Total Mesin"/>
                                         </group>
                                     </div>
                                 </div>

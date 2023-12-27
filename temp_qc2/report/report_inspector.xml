@@ -5,75 +5,53 @@
             <t t-foreach="docs" t-as="doc">
                 <t t-call="web.external_layout">
                     <div class="page">
-                        <h2 style="text-align: center; text-decoration:underline; border-bottom: 1px solid #000;"> Report Snap QC</h2>
-                        <div style=" background-color:  #164863;">
+                        <h2 style="text-align: center; border-bottom: 1px solid #000;"> Report QC Shuttle</h2>
+                        <div style=" background-color:  #3498DB; ">
                                 <h2 style="color: #fff;"> <span t-field="doc.nama"/></h2>
-                                <h5 style="color: #fff;"> <span t-field="doc.shift"/></h5>
-                                <h5 style="color: #fff;"> <span t-field="doc.putaran"/></h5>
+                            <div style=" background-color:  #3498DB;">
+                                <div class="row mt33 mb33">
+                                        <div class="col-3">
+                                            <font color="#fff">
+                                                <strong>Tanggal Snap :</strong>
+                                                <p t-field="doc.tanggal"/>
+                                            </font>
+                                        </div>
+                                        <div class="col-3">
+                                            <font color="#fff">
+                                                <strong>Sift :</strong>
+                                                <p t-field="doc.shift"/>
+                                            </font>
+                                        </div>
+                                        <div class="col-3">
+                                            <font color="#fff">
+                                                <strong>Putaran :</strong>
+                                                <p t-field="doc.putaran"/>
+                                            </font>
+                                        </div>
+                                        <div class="col-3">
+                                            <font color="#fff">
+                                                <strong>Persentase Global :</strong>
+                                                <p t-field="doc.persentase"/>
+                                            </font>
+                                        </div>
+                                </div>
+                            </div>
                         </div>
-                        <div style="padding-top:10px;">
-                        <div class="row mt32 mb32" t-attf-style="color:#FFF; !important;">
-                            <div class="col-3" t-if="o.tanggal">
-                                <font>
-                                    <strong>Tanggal : </strong>
-                                    <p t-field="o.tanggal"/>
-                                </font>
-                            </div>
-                            <div class="col-3" t-if="o.hitung_mesin">
-                                <font>
-                                    <strong>Jumlah Mesin : </strong>
-                                    <p t-field="o.hitung_mesin"/>
-                                </font>
-                            </div>
-                            <div class="col-3" t-if="o.persentase">
-                                <font>
-                                    <strong>Persentase : </strong>
-                                    <p t-field="o.persentase"/>
-                                </font>
-                            </div>
-                            <div class="col-3" t-if="o.persentase">
-                                <font>
-                                    <strong>Persentase : </strong>
-                                    <p t-field="o.persentase"/>
-                                </font>
-                            </div>
-                        </div>
-                        <!-- <table class="table table-striped table-bordered border-secondary table-sm">
-                            <thead>
-                                <tr>
-                                    <th style="background-color:#164863 !important;color:#FFF !important;"></th>
-                                    <th style="background-color:#164863 !important;color:#FFF !important;">NOMOR MESIN</th>
-                                    <th style="background-color:#164863 !important;color:#FFF !important;">KODE KAIN</th>
-                                </tr>
-                            </thead>
-                            <tbody class="snap_tbody">
-                                <tr t-foreach="doc.snap_qc_line" t-as="l">
-                                    <td>
-                                        <span t-field="l.blok_id"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="l.mesin"/>
-                                    </td>
-                                    <td>
-                                        <span t-field="l.kode_kain"/>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>                -->
+                        <div style="padding-top:10px; text-align:center; display: flex; align-items: center;" >
                         <table class="table table-striped table-bordered border-secondary table-sm">
                             <thead>
                                 <tr>
-                                    <th style="background-color:#164863 !important;color:#FFF !important;">Mesin</th>
-                                    <th style="background-color:#164863 !important;color:#FFF !important;">Putus Lusi</th>
-                                    <th style="background-color:#164863 !important;color:#FFF !important;">Putus Pakan</th>
-                                    <th style="background-color:#164863 !important;color:#FFF !important;">Bendera Merah</th>
-                                    <th style="background-color:#164863 !important;color:#FFF !important;">Ambrol</th>
-                                    <th style="background-color:#164863 !important;color:#FFF !important;">Dedel</th>
-                                    <th style="background-color:#164863 !important;color:#FFF !important;">Habis Beam</th>
-                                    <th style="background-color:#164863 !important;color:#FFF !important;">Naik Beam</th>
-                                    <th style="background-color:#164863 !important;color:#FFF !important;">Over Houle</th>
-                                    <th style="background-color:#164863 !important;color:#FFF !important;">Prefentiv</th>
-                                    <th style="background-color:#164863 !important;color:#FFF !important;">Keterangan</th>
+                                    <th style="background-color:#3498DB; !important;color:#FFF !important;">Nomor Mesin</th>
+                                    <th style="background-color:#3498DB; !important;color:#FFF !important;">Putus Lusi</th>
+                                    <th style="background-color:#3498DB; !important;color:#FFF !important;">Putus Pakan</th>
+                                    <th style="background-color:#3498DB; !important;color:#FFF !important;">Bendera Merah</th>
+                                    <th style="background-color:#3498DB; !important;color:#FFF !important;">Ambrol</th>
+                                    <th style="background-color:#3498DB; !important;color:#FFF !important;">Dedel</th>
+                                    <th style="background-color:#3498DB; !important;color:#FFF !important;">Habis Beam</th>
+                                    <th style="background-color:#3498DB; !important;color:#FFF !important;">Naik Beam</th>
+                                    <th style="background-color:#3498DB; !important;color:#FFF !important;">Over Houle</th>
+                                    <th style="background-color:#3498DB; !important;color:#FFF !important;">Preventif</th>
+                                    <th style="background-color:#3498DB; !important;color:#FFF !important;">Keterangan</th>
                                 </tr>
                             </thead>
                             <tbody class="snap_tbody">
@@ -113,28 +91,140 @@
                                     </td>
                                 </tr>
                             </tbody>
+                            <tbody class="snap_tbody" style="background-color:#3498DB;">
+                                <tr t-foreach="docs" t-as="doc">
+                                    <td>
+                                        <span>Jumlah</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.hitung_putus_lusi"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.hitung_putus_pakan"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.hitung_bendera_merah"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.hitung_ambrol"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.hitung_dedel"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.hitung_hb"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.hitung_naik_beam"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.hitung_oh"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.hitung_preventif"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.hitung_mesin"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody class="snap_tbody" style="background-color:#3498DB;">
+                                <tr t-foreach="docs" t-as="doc">
+                                    <td>
+                                        <span>Rata-rata</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.rata_rata_putus_lusi"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.rata_rata_putus_pakan"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.rata_rata_bendera_merah"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.rata_rata_ambrol"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.rata_rata_dedel"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.rata_rata_hb"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.rata_rata_naik_beam"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.rata_rata_oh"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.rata_rata_preventif"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.total_rata_rata_snap"/>
+                                    </td>
+                                </tr>
+                            </tbody>
                         </table>
                 </div>
                 <xpath expr="//p[@t-field='o.notes']" position="after">
-                    <div class="last-page" style="position:relative;font-size:15px;margin-top:0;">
-                        <div class="col-4 pull-right" style="text-align: right; margin-top: 40px;">
-                            <table>
-                                <tr>
-                                    <td style="line-height: 1.6; text-align:right;" width="75%">
-                                        <strong>Purworejo, <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d %B %Y')" /></strong>
-                                        <br/><br/><br/><br/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align:right" width="75%">
-                                        <strong>Snap Operator</strong>
-                                        <br/><br/><br/><br/><br/>
-                                        ( <span  t-field="doc.nama"/> )
-                                        <br/><br/>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+                    <div class="last-page" style="position:relative;font-size:12px;margin-top:100px;">
+                    <table>
+                        <tr>
+                            <td style="line-height: 1.6;" width="82%">
+                                <br/><br/><br/>
+                                <strong>Hasil Snap</strong>
+                                <br/><br/>
+                                <div class="col-4 pull-left">
+                                    <table class="table table-condensed table-sm">
+                                        <tr class="border-black">
+                                            <td>
+                                                <strong>Mesin URW </strong>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="doc.total_mesin"/>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-black">
+                                            <td>
+                                                <strong>Mesin Snap</strong>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="doc.hitung_mesin"/>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-black">
+                                            <td>
+                                                <strong>Total Mesin Jalan</strong>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-esc="int(doc.total_mesin - doc.hitung_mesin)"/>
+                                            </td>
+                                        </tr>
+                                        <!-- <tr class="border-black">
+                                            <td>
+                                                <strong>Presentasi Total</strong>
+                                            </td>
+                                            <td class="text-right" style="background-color: #3498DB; color: #fff !important;">
+                                                <span t-esc="int(doc.presentasi_total * 100)"/> %%
+                                            </td>
+                                        </tr> -->
+                                    </table>
+                                </div>
+                                <br/> <br/>
+        
+                            </td>
+                            <td style="text-align:left" width="20%">
+                                <strong>Purworejo, <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d %B %Y')" /></strong>
+                                <br/><br/><br/>
+                                <strong>Snap Operator</strong>
+                                <br/><br/><br/><br/> <br/><br/><br/>
+                                ( <span  t-field="doc.nama"/> )
+                                <br/>
+                                    <br/>
+                            </td>
+                        </tr>
+                    </table>
                     </div>
                 </xpath>                
             </div>
@@ -142,23 +232,4 @@
         </t>       
     </t>
 </template>
-
-<record id="report_qweb_paperformat_po" model="report.paperformat">
-    <field name="name">QC Report Qweb Paperformat</field>
-    <field name="default" eval="True"/>
-    <field name="format">A4</field>
-    <field name="orientation">Portrait</field>
-    <field name="margin_top">2</field>
-    <field name="margin_bottom">2</field>
-    <field name="margin_left">2.5</field>
-    <field name="margin_right">1.5</field>
-    <field name="header_line" eval="False"/>
-    <field name="header_spacing">28</field>
-    <field name="dpi">90</field>
-</record>
-
-<!-- <record id="purchase.action_report_purchase_order" model="ir.actions.report">
-    <field name="paperformat_id" ref="report_qweb_paperformat_po"/>
-</record> -->
-
 </odoo>
